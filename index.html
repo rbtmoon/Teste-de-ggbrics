@@ -1,272 +1,518 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenGuarani</title>
-  <style>
-    body {
-      background-color: #164A41;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    p {
-      font-size: 1.25rem;
-    }
-    main {
-      max-width: 1200px;
-      width: 100%;
-      background-color: #1A5A4F;
-      border-radius: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 32px;
-      margin-bottom: 48px;
-    }
-    section {
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 24px;
-      margin-bottom: 16px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    button {
-      background-color: #1E6A5C;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #164A41;
-    }
-    .flex-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .space-x-4 {
-      gap: 16px;
-    }
-    .space-y-6 {
-      margin-bottom: 24px;
-    }
-    .bg-green-700 {
-      background-color: #1E6A5C;
-    }
-    .rounded-lg {
-      border-radius: 16px;
-    }
-    .p-6 {
-      padding: 24px;
-    }
-    .grid {
-      display: grid;
-    }
-    .grid-cols-1 {
-      grid-template-columns: 1fr;
-    }
-    .md-grid-cols-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .gap-6 {
-      gap: 24px;
-    }
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    .font-semibold {
-      font-weight: 600;
-    }
-    .text-4xl {
-      font-size: 2.5rem;
-    }
-    .font-bold {
-      font-weight: bold;
-    }
-    .mb-4 {
-      margin-bottom: 16px;
-    }
-    .mb-6 {
-      margin-bottom: 24px;
-    }
-    .text-green-300 {
-      color: #6EE7B7;
-    }
-    .hover-text-green-100:hover {
-      color: #34D399;
-    }
-    .text-gray-300 {
-      color: #D1D5DB;
-    }
-    footer {
-      text-align: center;
-      margin-top: 48px;
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 16px;
-    }
-    .map-container {
-      position: relative;
-      width: 100%;
-      height: 400px;
-    }
-    .map-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 16px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>GreenGuarani</h1>
-    <p>Transformando hábitos diários em impacto ambiental</p>
-  </header>
-  <main>
-    <section id="about">
-      <h2>História e Objetivos</h2>
-      <p>
-        O GreenGuarani é uma plataforma digital que transforma ações sustentáveis dos cidadãos em impacto ambiental mensurável através de um sistema de recompensas baseado em blockchain e tokenização (EcoToken reward system). 
-        Nascido na Foz do Iguaçu, Brasil—home do Bosque Guarani urban forest—GreenGuarani apoia a transformação deste espaço em um modelo urbano de sustentabilidade, economia circular e inovação digital inclusiva. 
-        O projeto engaja cidadãos, negócios e instituições em um sistema colaborativo que rastrea, recompensa e amplifica comportamentos positivos ambientais.
-      </p>
-      <p>
-        Os cidadãos ganham EcoTokens ao realizar ações simples e verificáveis, como reciclar, caminhar ou pedalar, compostar resíduos orgânicos, participar de oficinas verdes ou adotar árvores. 
-        Esses Ecotokens podem ser usados para acessar descontos em eco-friendly local businesses, reinvestir em reforestation, ou suportar compost initiatives. 
-        Through gamified challenges, users increase seu impact e track their contribuição via interactive dashboards e maps.
-      </p>
-    </section>
-    <section id="downloads">
-      <h2>Baixe o Aplicativo</h2>
-      <div class="flex-center space-x-4">
-        <button onclick="alert('Baixando app para iPhone')">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M20 4h1a1 1 0 011 1v1H4V5a1 1 0 011-1h1V2a2 2 0 012-2h4a2 2 0 012 2v1zm-1 12a1 1 0 100 2 1 1 0 000-2zm-7 0a1 1 0 100 2 1 1 0 000-2zm-7 0a1 1 0 100 2 1 1 0 000-2z"></path></svg>
-          Baixar para iPhone
-        </button>
-        <button onclick="alert('Baixando app para Android')">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-1.5 16.5v-9l6 4.5-1.5 1.25L12 8.75l-4.5 3.25 1.5 1.25zM12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"></path></svg>
-          Baixar para Android
-        </button>
-      </div>
-    </section>
-    <section id="impact">
-      <h2>Impacto em Foz do Iguaçu</h2>
-      <div class="grid grid-cols-1 md-grid-cols-2 gap-6">
-        <div class="bg-green-700 rounded-lg p-6 space-y-4">
-          <h3 class="text-xl font-semibold">Árvores Plantadas</h3>
-          <p class="text-4xl font-bold">1.500+</p>
-        </div>
-        <div class="bg-green-700 rounded-lg p-6 space-y-4">
-          <h3 class="text-xl font-semibold">Kg de CO₂ Capturados</h3>
-          <p class="text-4xl font-bold">100.000+</p>
-        </div>
-        <div class="bg-green-700 rounded-lg p-6 space-y-4">
-          <h3 class="text-xl font-semibold">Materiais Reciclados</h3>
-          <p class="text-4xl font-bold">200.000+</p>
-        </div>
-        <div class="bg-green-700 rounded-lg p-6 space-y-4">
-          <h3 class="text-xl font-semibold">Área Verde Regenerada</h3>
-          <p class="text-4xl font-bold">5.000 m²</p>
-        </div>
-      </div>
-    </section>
-    <section id="map">
-      <h2>Encontre Pontos Próximos</h2>
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.465626517229!2d-49.28753838474949!3d-25.54682858377338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d0748609635919%3A0x91109186288b8c73!2sFoz%20do%20Igua%C3%A7u%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1688258480975!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-    <section id="profile">
-      <h2>Minha Conta</h2>
-      <button onclick="toggleProfile()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M10 7a2 2 0 114 0 2 2 0 01-4 0zM12 14a7 7 0 100-14 7 7 0 000 14zm0 1a8 8 0 110-16 8 8 0 010 16z"></path></svg>
-        Gerenciar Perfil
-      </button>
-      <div id="profile-details" style="display: none;" class="bg-green-700 rounded-lg p-6 space-y-4 mt-4">
-        <h3 class="text-xl font-semibold">Seu Saldo de EcoTokens</h3>
-        <p class="text-4xl font-bold">1500</p>
-        <button class="bg-green-600 hover:bg-green-500 px-6 py-3 rounded flex items-center space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M10 7a2 2 0 114 0 2 2 0 01-4 0zm12 12a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2-2h4a2 2 0 012 2v14zm-2 0v-3h-3a1 1 0 00-1 1v2h4zm-8 0v-3H7a1 1 0 00-1 1v2h4zm-6 0v-3H3a1 1 0 00-1-1v2h2zm12-4v-3h-3a1 1 0 00-1 1v2h4zm-8 0v-3H7a1 1 0 00-1 1v2h4zm-6 0v-3H3a1 1 0 00-1-1v2h2zm12-4v-3h-3a1 1 0 00-1 1v2h4zm-8 0v-3H7a1 1 0 00-1 1v2h4zm-6 0v-3H3a1 1 0 00-1-1v2h2z"></path></svg>
-          Extrair EcoTokens
-        </button>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contatos e Redes Sociais</h2>
-      <div class="flex-center space-x-6">
-        <a href="mailto:contato@greenguarani.com" class="bg-green-700 hover:bg-green-600 px-6 py-3 rounded flex items-center space-x-2 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 7L6 8v10h7l5-4V8z"></path></svg>
-          Email
-        </a>
-        <a href="https://facebook.com/greenguarani" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 px-6 py-3 rounded flex items-center space-x-2 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
-          Facebook
-        </a>
-        <a href="https://instagram.com/greenguarani" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 px-6 py-3 rounded flex items-center space-x-2 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M20 4h1a1 1 0 011 1v1H4V5a1 1 0 011-1h1V2a2 2 0 012-2h4a2 2 0 012 2v1zm-1 12a1 1 0 100 2 1 1 0 000-2zm-7 0a1 1 0 100 2 1 1 0 000-2zm-7 0a1 1 0 100 2 1 1 0 000-2z"></path></svg>
-          Instagram
-        </a>
-        <a href="https://twitter.com/greenguarani" target="_blank" rel="noopener noreferrer" class="bg-green-700 hover:bg-green-600 px-6 py-3 rounded flex items-center space-x-2 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
-          Twitter
-        </a>
-      </div>
-    </section>
-    <section id="privacy">
-      <h2>Políticas e Privacidade</h2>
-      <p>
-        Ao utilizar o GreenGuarani, você concorda com nossas <a href="#terms" class="text-green-300 hover-text-green-100">Políticas de Privacidade</a> e <a href="#terms" class="text-green-300 hover-text-green-100">Termos de Uso</a>.
-      </p>
-    </section>
-  </main>
-  <footer>
-    <p class="text-gray-300">Organizing Committee of the BRICS Competition of Skills Development and Technology Innovation</p>
-    <p class="text-gray-300">B09-7F, BRICS Future Innovation Park, Software Park III, 52 Chengyi North Road, Xiamen, Fujian China</p>
-  </footer>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenGuaraní — Cidades que regeneram</title>
+  <meta name="description" content="Recompensamos hábitos sustentáveis com EcoTokens e medimos impacto em reciclagem, compostagem e CO₂ no Bosque Guarani (Foz do Iguaçu)." />
+  <meta name="theme-color" content="#059669" />
+  <link rel="canonical" href="https://seu-dominio-exemplo.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GreenGuaraní — Cidades que regeneram" />
+  <meta property="og:description" content="Transforme hábitos do dia a dia em impacto ambiental mensurável." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (usa seu logo se desejar) -->
+  <link rel="icon" href="logo.jpeg" />
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    function toggleProfile() {
-      const profileDetails = document.getElementById('profile-details');
-      if (profileDetails.style.display === 'none') {
-        profileDetails.style.display = 'block';
-      } else {
-        profileDetails.style.display = 'none';
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        container: { center: true, padding: '1rem' },
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { DEFAULT: '#059669', 50:'#ECFDF5',100:'#D1FAE5',200:'#A7F3D0',600:'#059669',700:'#047857'} },
+          boxShadow: { soft: '0 10px 30px rgba(16,185,129,0.18)' }
+        }
       }
     }
+  </script>
+
+  <!-- Libs -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    .glass { backdrop-filter: blur(8px); }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .grid-bento { display:grid; grid-template-columns:repeat(6,1fr); gap:1rem }
+    @media (max-width: 768px){ .grid-bento { grid-template-columns: 1fr; } }
+    .store-badge { display:inline-flex; align-items:center; gap:.6rem; padding:.55rem .9rem; border-radius:.9rem; border:1px solid rgba(5,150,105,.25); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-brand-50 via-white to-white text-slate-800 dark:bg-slate-950 dark:from-slate-900 dark:text-slate-100">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-white dark:focus:bg-slate-800 focus:text-slate-900 dark:focus:text-white focus:px-3 focus:py-2 focus:rounded-lg">Pular para o conteúdo</a>
+
+  <!-- Deco background -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-40 -left-32 h-80 w-80 rounded-full bg-brand/20 blur-3xl"></div>
+    <div class="absolute top-20 -right-16 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-brand/10 bg-white/70 dark:bg-slate-900/70 glass">
+    <div class="container flex items-center justify-between py-3">
+      <a href="#" class="flex items-center gap-3" aria-label="Página inicial">
+        <img src="logo.jpeg" alt="GreenGuaraní" class="h-9 w-9 rounded-xl object-contain bg-white" onerror="this.style.display='none'"/>
+        <div class="grid h-9 w-9 place-items-center rounded-xl bg-brand font-bold text-white" aria-hidden="true">GG</div>
+        <span class="font-semibold tracking-tight">GreenGuaraní</span>
+      </a>
+      <nav class="hidden items-center gap-6 text-sm md:flex" aria-label="Primária">
+        <a href="#historia" class="hover:text-brand-700">História</a>
+        <a href="#como" class="hover:text-brand-700">Como funciona</a>
+        <a href="#impacto" class="hover:text-brand-700">Impacto</a>
+        <a href="#apps" class="hover:text-brand-700">Apps</a>
+        <a href="#mapa" class="hover:text-brand-700">Mapa</a>
+        <a href="#conta" class="hover:text-brand-700">Minha conta</a>
+        <a href="#contato" class="hover:text-brand-700">Contato</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="themeBtn" class="rounded-xl border px-3 py-1.5 text-sm hover:bg-brand-50 dark:hover:bg-slate-800" aria-label="Alternar tema">🌙</button>
+        <span class="hidden rounded-full bg-brand px-3 py-1 text-xs font-medium text-white md:inline-flex">Piloto 2025</span>
+        <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Quero participar</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="container grid items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-22">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">
+            <i data-lucide="leaf" class="h-4 w-4"></i>
+            Tecnologia cívica para cidades regenerativas
+          </div>
+          <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+            Transforme hábitos do dia a dia em <span class="text-brand-700">impacto ambiental</span> mensurável
+          </h1>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+            Recompensamos ações sustentáveis com EcoTokens e rastreamos sua contribuição em reciclagem, compostagem e captura de CO₂ no Bosque Guarani — Foz do Iguaçu.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button onclick="document.getElementById('como').scrollIntoView({behavior:'smooth'})" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Como funciona?</button>
+            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1CRVDndlYo0FMAUg3n5BtxoQ96njCBDxm/preview" class="rounded-2xl border border-brand-200 px-4 py-2 text-center text-sm font-medium text-slate-800 shadow-sm hover:bg-brand-50 dark:text-slate-100 dark:hover:bg-slate-800">Ver demo</a>
+          </div>
+          <form id="ctaForm" class="mt-6 flex gap-2">
+            <input id="ctaEmail" type="email" required placeholder="Seu e-mail para novidades" class="w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
+            <button class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Avisar-me</button>
+          </form>
+          <p class="mt-3 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <i data-lucide="shield" class="h-4 w-4"></i> Seus dados serão usados apenas para contato do piloto.
+          </p>
+        </div>
+        <div class="reveal">
+          <div class="overflow-hidden rounded-2xl border bg-white shadow-soft">
+            <iframe class="h-[360px] w-full md:h-[420px]" src="https://drive.google.com/file/d/1CRVDndlYo0FMAUg3n5BtxoQ96njCBDxm/preview" allow="autoplay" title="GreenGuaraní Demo"></iframe>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-4">
+            <div class="rounded-2xl border bg-white/90 p-4 text-center dark:bg-slate-900/70">
+              <div class="text-3xl font-bold tracking-tight md:text-4xl" id="stat-acoes">—</div>
+              <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Ações validadas</div>
+            </div>
+            <div class="rounded-2xl border bg-white/90 p-4 text-center dark:bg-slate-900/70">
+              <div class="text-3xl font-bold tracking-tight md:text-4xl" id="stat-tokens">—</div>
+              <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">EcoTokens emitidos</div>
+            </div>
+            <div class="rounded-2xl border bg-white/90 p-4 text-center dark:bg-slate-900/70">
+              <div class="text-3xl font-bold tracking-tight md:text-4xl" id="stat-co2">—</div>
+              <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">CO₂ estimado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- História e Objetivos -->
+    <section id="historia" class="bg-gradient-to-b from-white to-brand-50/40 py-16">
+      <div class="container grid gap-10 md:grid-cols-2">
+        <div class="reveal">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">História & objetivos</h2>
+          <p class="mt-3 text-slate-700 dark:text-slate-300">Nascemos da colaboração entre educadores, ciclistas, recicladores e pesquisadores de Foz do Iguaçu para criar uma economia cidadã do bem comum. Nosso objetivo é acelerar hábitos sustentáveis com incentivo econômico, dados abertos e inclusão digital e analógica (QR em papel).</p>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-700 dark:text-slate-300 space-y-1">
+            <li>Promover reciclagem, compostagem e mobilidade ativa.</li>
+            <li>Reforçar laços comunitários com validadores locais.</li>
+            <li>Mensurar CO₂ evitado/retirado e evidenciar impacto.</li>
+            <li>Escalar para bairros e escolas com módulos replicáveis.</li>
+          </ul>
+        </div>
+        <div class="reveal rounded-2xl border bg-white p-6 dark:bg-slate-900">
+          <h3 class="text-lg font-semibold">Objetivos 2025 (Foz do Iguaçu)</h3>
+          <div class="mt-4 grid grid-cols-2 gap-4 text-center">
+            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">1.000+</div><div class="text-xs text-slate-600 dark:text-slate-300">Cidadãos engajados</div></div>
+            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">20+</div><div class="text-xs text-slate-600 dark:text-slate-300">Comércios parceiros</div></div>
+            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">5t</div><div class="text-xs text-slate-600 dark:text-slate-300">Resíduos desviados</div></div>
+            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">1t</div><div class="text-xs text-slate-600 dark:text-slate-300">CO₂ estimado</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <section id="apps" class="py-16">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="inline-flex rounded-full bg-brand px-3 py-1 text-xs font-medium text-white">Aplicativo</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Baixe o app</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Disponível para iOS e Android (beta). Use o QR para validar ações e acompanhar seus tokens.</p>
+        </div>
+        <div class="flex items-center justify-center gap-4 flex-wrap">
+          <a href="#" class="store-badge"><i data-lucide="apple" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">Download on the</div><div class="text-sm font-semibold">App Store</div></div></a>
+          <a href="#" class="store-badge"><i data-lucide="smartphone" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">GET IT ON</div><div class="text-sm font-semibold">Google Play</div></div></a>
+          <a href="#" class="store-badge"><i data-lucide="qr-code" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">Acesse via</div><div class="text-sm font-semibold">PWA (web)</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como" class="bg-gradient-to-b from-white to-brand-50/60 py-16">
+      <div class="container">
+        <div class="mb-10 text-center">
+          <span class="inline-flex rounded-full bg-brand px-3 py-1 text-xs font-medium text-white">Como funciona</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Do QR ao impacto real</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Quatro etapas simples para participar e gerar benefícios para a cidade e a natureza.</p>
+        </div>
+        <div class="grid-bento reveal">
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3">
+            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="qr-code" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Cadastre-se & escaneie</h3></div>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Crie sua conta, receba seu QR (também em papel) e valide ações verdes.</p>
+          </article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3">
+            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="recycle" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Entregue & valide</h3></div>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Leve recicláveis e compostagem, participe de oficinas ou use mobilidade ativa.</p>
+          </article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-2">
+            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="coins" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Ganhe EcoTokens</h3></div>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Validadores comunitários registram sua ação e você recebe tokens na carteira.</p>
+          </article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-4">
+            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="leaf" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Troque & reinvista</h3></div>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Use tokens em comércios parceiros ou apoie reflorestação e compostagem comunitária.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impacto -->
+    <section id="impacto" class="bg-brand-50/60 py-16 md:py-24">
+      <div class="container grid items-center gap-10 md:grid-cols-2">
+        <div class="reveal">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Impacto em Foz do Iguaçu</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Acompanhe métricas de adoção, ações tokenizadas, integridade de dados e impacto ambiental.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-200">
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> Usuários ativos e bairros participantes</li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> Ações verificadas e tokens emitidos/trocados</li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> % de validação humana e IoT operante</li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> CO₂ estimado, recicláveis e kg de composto</li>
+          </ul>
+        </div>
+        <div class="reveal rounded-2xl border bg-white p-6 dark:bg-slate-900">
+          <canvas id="kpiChart" class="h-64"></canvas>
+          <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+            <div><div class="text-2xl font-bold md:text-3xl" id="stat-acoes-2">—</div><div class="text-xs text-slate-600 dark:text-slate-300">Ações</div></div>
+            <div><div class="text-2xl font-bold md:text-3xl" id="stat-tokens-2">—</div><div class="text-xs text-slate-600 dark:text-slate-300">EcoTokens</div></div>
+            <div><div class="text-2xl font-bold md:text-3xl" id="stat-co2-2">—</div><div class="text-xs text-slate-600 dark:text-slate-300">CO₂ (kg)</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa interativo -->
+    <section id="mapa" class="py-16">
+      <div class="container">
+        <div class="mb-6 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Pontos próximos</h2>
+            <p class="mt-1 text-slate-600 dark:text-slate-300">Veja no mapa os pontos de validação mais perto de você (demonstração).</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="btnGeo" class="rounded-xl border px-3 py-2 text-sm hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="map-pin" class="mr-1 inline h-4 w-4"></i> Usar minha localização</button>
+            <button id="btnReset" class="rounded-xl border px-3 py-2 text-sm hover:bg-brand-50 dark:hover:bg-slate-800">Reiniciar</button>
+          </div>
+        </div>
+        <div id="map" class="h-[420px] w-full rounded-2xl border"></div>
+        <div class="mt-4 text-sm text-slate-600 dark:text-slate-300" id="listaPontos"></div>
+      </div>
+    </section>
+
+    <!-- Minha Conta -->
+    <section id="conta" class="bg-brand-50/60 py-16">
+      <div class="container grid gap-8 md:grid-cols-3">
+        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900 md:col-span-1">
+          <h3 class="text-lg font-semibold">Meu perfil</h3>
+          <form id="formPerfil" class="mt-4 space-y-3">
+            <div>
+              <label class="text-sm" for="pNome">Nome</label>
+              <input id="pNome" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Seu nome" required />
+            </div>
+            <div>
+              <label class="text-sm" for="pEmail">Email</label>
+              <input id="pEmail" type="email" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="voce@email.com" required />
+            </div>
+            <button class="w-full rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white">Salvar perfil</button>
+          </form>
+          <div id="perfilOk" class="hidden">
+            <div class="mt-3 rounded-xl border p-3 text-sm"><i data-lucide="user" class="mr-1 inline h-4 w-4"></i> <span id="perfilNome"></span><br/><i data-lucide="mail" class="mr-1 inline h-4 w-4"></i> <span id="perfilEmail"></span></div>
+            <button id="btnSair" class="mt-3 w-full rounded-xl border px-4 py-2 text-sm">Sair</button>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900 md:col-span-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Saldo & extrato de EcoTokens</h3>
+            <div class="text-sm">Saldo: <span id="saldo" class="font-semibold">0</span> ETK</div>
+          </div>
+          <div class="mt-4 grid gap-3 md:grid-cols-3">
+            <input id="tDesc" class="rounded-xl border px-3 py-2" placeholder="Descrição da ação" />
+            <input id="tValor" type="number" class="rounded-xl border px-3 py-2" placeholder="Tokens (+/-)" />
+            <button id="tAdd" class="rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white">Registrar</button>
+          </div>
+          <div class="mt-4 overflow-auto rounded-xl border">
+            <table class="min-w-full text-sm">
+              <thead class="bg-brand-100 text-brand-700"><tr><th class="p-2 text-left">Data</th><th class="p-2 text-left">Descrição</th><th class="p-2 text-right">Δ Tokens</th><th class="p-2 text-right">Saldo</th></tr></thead>
+              <tbody id="extrato"></tbody>
+            </table>
+          </div>
+          <div class="mt-3 flex gap-2">
+            <button id="btnCSV" class="rounded-xl border px-3 py-2 text-sm">Exportar CSV</button>
+            <button id="btnLimpar" class="rounded-xl border px-3 py-2 text-sm">Limpar extrato</button>
+          </div>
+          <p class="mt-2 text-xs text-slate-500">* Esta é uma simulação local (localStorage). Na versão oficial, o saldo e extrato vêm da sua carteira na nuvem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato e redes -->
+    <section id="contato" class="py-16">
+      <div class="container grid items-start gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Fale conosco</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Dúvidas, parcerias e imprensa.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-200">
+            <li><i data-lucide="map-pin" class="mr-2 inline h-4 w-4"></i> Foz do Iguaçu, PR — Brasil</li>
+            <li><i data-lucide="mail" class="mr-2 inline h-4 w-4"></i> contato@greenguarani.org (exemplo)</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a href="#" aria-label="Instagram" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+            <a href="#" aria-label="Facebook" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="facebook" class="h-5 w-5"></i></a>
+            <a href="#" aria-label="YouTube" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="youtube" class="h-5 w-5"></i></a>
+            <a href="#" aria-label="LinkedIn" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+          </div>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900">
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label class="text-sm font-medium" for="fNome">Nome</label>
+              <input required id="fNome" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="fEmail">Email</label>
+              <input type="email" required id="fEmail" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="voce@email.com" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="fMsg">Mensagem</label>
+              <textarea rows="4" id="fMsg" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Conte como podemos ajudar"></textarea>
+            </div>
+            <button class="w-full rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700"><i data-lucide="mail" class="mr-2 inline h-4 w-4"></i>Enviar</button>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Responderemos em breve.</p>
+          </form>
+          <div id="thanks" class="hidden py-10 text-center">
+            <i data-lucide="check-circle" class="mx-auto h-10 w-10 text-brand"></i>
+            <h3 class="mt-3 text-xl font-semibold">Obrigado! Interesse registrado.</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Em breve entraremos em contato.</p>
+            <button onclick="resetForm()" class="mt-6 rounded-2xl border px-4 py-2">Enviar outra mensagem</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t py-10">
+    <div class="container flex flex-col items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-300 md:flex-row">
+      <div class="flex items-center gap-2">
+        <img src="logo.jpeg" alt="GreenGuaraní" class="h-8 w-8 rounded-lg object-contain bg-white" onerror="this.style.display='none'"/>
+        <div class="grid h-8 w-8 place-items-center rounded-lg bg-brand font-bold text-white" aria-hidden="true">GG</div>
+        <span class="font-semibold tracking-tight">GreenGuaraní</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>© <span id="year"></span> GreenGuaraní</span>
+        <span class="hidden md:inline">•</span>
+        <a href="#politicas" class="hover:text-brand-700">Políticas</a>
+        <a href="#privacidade" class="hover:text-brand-700">Privacidade</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a class="hover:text-brand-700" href="https://drive.google.com/file/d/1CRVDndlYo0FMAUg3n5BtxoQ96njCBDxm/preview" target="_blank" rel="noreferrer">Vídeo demo</a>
+        <span class="hidden md:inline">•</span>
+        <a class="hover:text-brand-700" href="#">Imprensa</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Políticas & Privacidade (seções simples) -->
+  <section id="politicas" class="py-12 border-t bg-white dark:bg-slate-900">
+    <div class="container prose prose-sm max-w-none dark:prose-invert">
+      <h3>Políticas</h3>
+      <p>Nosso piloto segue princípios de dados mínimos, auditoria comunitária e transparência. Tokens são instrumentais e não financeiros; não representam títulos ou valores mobiliários.</p>
+    </div>
+  </section>
+  <section id="privacidade" class="py-12 border-t bg-white dark:bg-slate-900">
+    <div class="container prose prose-sm max-w-none dark:prose-invert">
+      <h3>Privacidade</h3>
+      <p>Coletamos apenas dados necessários ao funcionamento do sistema (nome, email e registros de ações). Você pode solicitar exclusão a qualquer momento. Consulte a política completa na versão final do app e painéis.</p>
+    </div>
+  </section>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GreenGuaraní",
+    "url": "https://seu-dominio-exemplo.com/",
+    "publisher": {"@type":"Organization","name":"GreenGuaraní"}
+  }
+  </script>
+
+  <script>
+    // ----- Dados mock (substitua por sua API) -----
+    const kpiData = [
+      { mes: "Jan", acoes: 40, tokens: 120, co2: 15 },
+      { mes: "Fev", acoes: 85, tokens: 310, co2: 42 },
+      { mes: "Mar", acoes: 130, tokens: 520, co2: 90 },
+      { mes: "Abr", acoes: 150, tokens: 680, co2: 120 },
+      { mes: "Mai", acoes: 220, tokens: 990, co2: 180 },
+      { mes: "Jun", acoes: 260, tokens: 1200, co2: 220 },
+    ];
+
+    const fmt = n => new Intl.NumberFormat().format(n);
+
+    // Totais com animação
+    const totais = kpiData.reduce((acc, r) => ({ acoes: acc.acoes + r.acoes, tokens: acc.tokens + r.tokens, co2: acc.co2 + r.co2 }), { acoes:0, tokens:0, co2:0 });
+    const animateCount = (el, to, suffix = '') => { const start = 0; const dur = 800; const t0 = performance.now(); const step = now => { const p = Math.min(1, (now - t0)/dur); el.textContent = fmt(Math.floor(start + (to-start)*p)) + suffix; if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+    animateCount(document.getElementById('stat-acoes'), totais.acoes);
+    animateCount(document.getElementById('stat-tokens'), totais.tokens);
+    animateCount(document.getElementById('stat-co2'), totais.co2, ' kg');
+    document.getElementById('stat-acoes-2').textContent = fmt(totais.acoes);
+    document.getElementById('stat-tokens-2').textContent = fmt(totais.tokens);
+    document.getElementById('stat-co2-2').textContent = fmt(totais.co2);
+
+    // Ano no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Gráfico Chart.js
+    new Chart(document.getElementById('kpiChart'), {
+      type: 'line',
+      data: { labels: kpiData.map(r => r.mes), datasets: [{ label: 'EcoTokens', data: kpiData.map(r => r.tokens), borderColor: '#059669', backgroundColor: 'rgba(5,150,105,.2)', fill: true, tension: .35 }] },
+      options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(0,0,0,.06)' } } } }
+    });
+
+    // Tabs EcoToken
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(btn => btn.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.remove('bg-brand','text-white'));
+      btn.classList.add('bg-brand','text-white');
+      document.getElementById('tab-cid')?.classList.toggle('hidden', btn.dataset.tab !== 'cid');
+      document.getElementById('tab-com')?.classList.toggle('hidden', btn.dataset.tab !== 'com');
+      document.getElementById('tab-gov')?.classList.toggle('hidden', btn.dataset.tab !== 'gov');
+    }));
+
+    // Form contato — simulado
+    document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); contactForm.classList.add('hidden'); thanks.classList.remove('hidden'); });
+    function resetForm(){ contactForm.reset(); thanks.classList.add('hidden'); contactForm.classList.remove('hidden'); }
+
+    // Tema
+    const themeBtn = document.getElementById('themeBtn');
+    const setTheme = t => { document.documentElement.classList.toggle('dark', t==='dark'); localStorage.setItem('theme', t); themeBtn.textContent = t==='dark' ? '☀️' : '🌙'; };
+    setTheme(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    themeBtn.addEventListener('click', () => setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark'));
+
+    // Revelar on-scroll
+    const io = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ----- Mapa (Leaflet) -----
+    const pontosDemo = [
+      { nome: 'Bosque Guarani (Zoológico)', lat: -25.5424, lng: -54.5859, tipo: 'Validação' },
+      { nome: 'Parque Monjolo', lat: -25.5148, lng: -54.5744, tipo: 'Coleta/Composto' },
+      { nome: 'SMTT — Estação Bike', lat: -25.5429, lng: -54.5888, tipo: 'Mobilidade' },
+      { nome: 'Vila A — Gramadão', lat: -25.4288, lng: -54.5990, tipo: 'Eventos/Feira' }
+    ];
+
+    const map = L.map('map').setView([-25.5424, -54.5859], 13); // centro em Foz
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+    const markers = [];
+    pontosDemo.forEach(p => { const m = L.marker([p.lat, p.lng]).addTo(map).bindPopup(`<b>${p.nome}</b><br/>${p.tipo}`); markers.push({ ...p, marker: m }); });
+
+    function listarProximos(pos){
+      const d = (a,b) => Math.hypot(a.lat-b.lat, a.lng-b.lng);
+      const lista = [...markers].map(m => ({...m, dist: d({lat:pos.lat,lng:pos.lng}, {lat:m.lat,lng:m.lng})})).sort((a,b)=>a.dist-b.dist).slice(0,4);
+      const html = lista.map(x => `• <b>${x.nome}</b> — ${x.tipo}`).join('<br/>');
+      document.getElementById('listaPontos').innerHTML = `<p><b>Pontos próximos:</b><br/>${html}</p>`;
+    }
+    listarProximos({lat:-25.5424,lng:-54.5859});
+
+    document.getElementById('btnGeo').addEventListener('click', () => {
+      if (!navigator.geolocation) return alert('Geolocalização não suportada.');
+      navigator.geolocation.getCurrentPosition((loc) => {
+        const { latitude: lat, longitude: lng } = loc.coords;
+        const me = L.circleMarker([lat, lng], { radius: 8, color: '#10b981' }).addTo(map).bindPopup('Você está aqui');
+        map.setView([lat, lng], 14);
+        listarProximos({lat,lng});
+      }, () => alert('Não foi possível obter sua localização.'));
+    });
+    document.getElementById('btnReset').addEventListener('click', ()=>{ map.setView([-25.5424,-54.5859],13); listarProximos({lat:-25.5424,lng:-54.5859}); });
+
+    // ----- Minha conta (simulado em localStorage) -----
+    const S_USER = 'gg_user', S_LEDGER = 'gg_ledger';
+    const $ = sel => document.querySelector(sel);
+
+    function loadUser(){ try { return JSON.parse(localStorage.getItem(S_USER) || 'null'); } catch { return null; } }
+    function saveUser(u){ localStorage.setItem(S_USER, JSON.stringify(u)); }
+    function loadLedger(){ try { return JSON.parse(localStorage.getItem(S_LEDGER) || '[]'); } catch { return []; } }
+    function saveLedger(l){ localStorage.setItem(S_LEDGER, JSON.stringify(l)); }
+
+    function uiUser(){
+      const u = loadUser();
+      if(u){ $('#formPerfil').classList.add('hidden'); $('#perfilOk').classList.remove('hidden'); $('#perfilNome').textContent = u.nome; $('#perfilEmail').textContent = u.email; }
+      else { $('#perfilOk').classList.add('hidden'); $('#formPerfil').classList.remove('hidden'); }
+    }
+
+    function uiLedger(){
+      const l = loadLedger();
+      let saldo = 0; const rows = l.map(item => { saldo += item.valor; return `<tr class="border-t"><td class="p-2">${new Date(item.ts).toLocaleString()}</td><td class="p-2">${item.desc}</td><td class="p-2 text-right">${item.valor>0?'+':''}${item.valor}</td><td class="p-2 text-right">${saldo}</td></tr>`; }).join('');
+      $('#extrato').innerHTML = rows || '<tr><td colspan="4" class="p-3 text-center text-slate-500">Sem lançamentos</td></tr>';
+      $('#saldo').textContent = saldo;
+    }
+
+    $('#formPerfil').addEventListener('submit', (e)=>{ e.preventDefault(); saveUser({ nome: $('#pNome').value, email: $('#pEmail').value }); uiUser(); });
+    $('#btnSair').addEventListener('click', ()=>{ localStorage.removeItem(S_USER); uiUser(); });
+
+    $('#tAdd').addEventListener('click', ()=>{
+      const desc = $('#tDesc').value.trim(); const valor = parseInt($('#tValor').value,10);
+      if(!desc || isNaN(valor)) return alert('Preencha descrição e valor.');
+      const l = loadLedger(); l.push({ ts: Date.now(), desc, valor }); saveLedger(l); $('#tDesc').value=''; $('#tValor').value=''; uiLedger();
+    });
+    $('#btnCSV').addEventListener('click', ()=>{ const l = loadLedger(); const header = 'data,descricao,valor'; const lines = l.map(i => `${new Date(i.ts).toISOString()},${i.desc.replace(/,/g,';')},${i.valor}`); const csv = [header,...lines].join('\n'); const blob = new Blob([csv], {type:'text/csv'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'extrato-ecotokens.csv'; a.click(); });
+    $('#btnLimpar').addEventListener('click', ()=>{ if(confirm('Apagar todos os lançamentos?')){ saveLedger([]); uiLedger(); }});
+
+    // init
+    uiUser(); uiLedger();
+
+    // Ícones
+    window.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
   </script>
 </body>
 </html>
