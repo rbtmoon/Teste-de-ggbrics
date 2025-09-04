@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GreenGuaraní — Cidades que regeneram</title>
   <meta name="description" content="Recompensamos hábitos sustentáveis com EcoTokens e medimos impacto em reciclagem, compostagem e CO₂ no Bosque Guarani (Foz do Iguaçu)." />
-  <meta name="theme-color" content="#059669" />
   <link rel="canonical" href="https://seu-dominio-exemplo.com/" />
+  <meta name="theme-color" content="#059669" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
@@ -15,8 +15,8 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (usa seu logo se desejar) -->
-  <link rel="icon" href="logo.jpeg" />
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%23059669"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-weight="700" font-size="34" fill="white">GG</text></svg>' />
 
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,8 @@
     .reveal.in { opacity: 1; transform: none; }
     .grid-bento { display:grid; grid-template-columns:repeat(6,1fr); gap:1rem }
     @media (max-width: 768px){ .grid-bento { grid-template-columns: 1fr; } }
-    .store-badge { display:inline-flex; align-items:center; gap:.6rem; padding:.55rem .9rem; border-radius:.9rem; border:1px solid rgba(5,150,105,.25); }
+    .store { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:9999px; border:1px solid rgba(5,150,105,.25); }
+    .tab-btn { transition: background .2s ease; }
   </style>
 </head>
 <body class="bg-gradient-to-b from-brand-50 via-white to-white text-slate-800 dark:bg-slate-950 dark:from-slate-900 dark:text-slate-100">
@@ -65,53 +66,47 @@
   <header class="sticky top-0 z-50 border-b border-brand/10 bg-white/70 dark:bg-slate-900/70 glass">
     <div class="container flex items-center justify-between py-3">
       <a href="#" class="flex items-center gap-3" aria-label="Página inicial">
-        <img src="logo.jpeg" alt="GreenGuaraní" class="h-9 w-9 rounded-xl object-contain bg-white" onerror="this.style.display='none'"/>
-        <div class="grid h-9 w-9 place-items-center rounded-xl bg-brand font-bold text-white" aria-hidden="true">GRENGUARANI</div>
+        <!-- Use seu arquivo logo.jpeg no repositório -->
+        <img src="logo.jpeg" alt="GreenGuaraní" class="h-9 w-9 rounded-full object-cover" />
         <span class="font-semibold tracking-tight">GreenGuaraní</span>
       </a>
       <nav class="hidden items-center gap-6 text-sm md:flex" aria-label="Primária">
         <a href="#historia" class="hover:text-brand-700">História</a>
         <a href="#como" class="hover:text-brand-700">Como funciona</a>
-        <a href="#impacto" class="hover:text-brand-700">Impacto</a>
         <a href="#apps" class="hover:text-brand-700">Apps</a>
         <a href="#mapa" class="hover:text-brand-700">Mapa</a>
+        <a href="#impacto" class="hover:text-brand-700">Impacto</a>
         <a href="#conta" class="hover:text-brand-700">Minha conta</a>
         <a href="#contato" class="hover:text-brand-700">Contato</a>
       </nav>
       <div class="flex items-center gap-2">
         <button id="themeBtn" class="rounded-xl border px-3 py-1.5 text-sm hover:bg-brand-50 dark:hover:bg-slate-800" aria-label="Alternar tema">🌙</button>
         <span class="hidden rounded-full bg-brand px-3 py-1 text-xs font-medium text-white md:inline-flex">Piloto 2025</span>
-        <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Quero participar</button>
+        <a href="#contato" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Quero participar</a>
       </div>
     </div>
   </header>
 
-  <main id="conteudo">
+  <!-- ====== MAIN VIEW ====== -->
+  <main id="mainView">
     <!-- Hero -->
     <section class="relative overflow-hidden">
-      <div class="container grid items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-22">
+      <div class="container grid items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
         <div class="reveal">
           <div class="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200">
             <i data-lucide="leaf" class="h-4 w-4"></i>
-            FOZ DO IGUACU - PROJETO RENOVAVEI
+            Tecnologia cívica para cidades regenerativas
           </div>
           <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
             Transforme hábitos do dia a dia em <span class="text-brand-700">impacto ambiental</span> mensurável
           </h1>
           <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            Recompensamos ações sustentáveis com EcoTokens e rastreamos sua contribuição em reciclagem, compostagem e captura de CO₂ no Bosque Guarani — Foz do Iguaçu.
+            GreenGuaraní recompensa ações sustentáveis com EcoTokens e rastreia sua contribuição em reciclagem, compostagem e captura de CO₂ no Bosque Guarani (Foz do Iguaçu).
           </p>
           <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button onclick="document.getElementById('como').scrollIntoView({behavior:'smooth'})" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Como funciona?</button>
+            <a href="#historia" class="rounded-2xl bg-brand px-4 py-2 text-center text-sm font-medium text-white shadow-sm hover:bg-brand-700">Conheça o projeto</a>
             <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1CRVDndlYo0FMAUg3n5BtxoQ96njCBDxm/preview" class="rounded-2xl border border-brand-200 px-4 py-2 text-center text-sm font-medium text-slate-800 shadow-sm hover:bg-brand-50 dark:text-slate-100 dark:hover:bg-slate-800">Ver demo</a>
           </div>
-          <form id="ctaForm" class="mt-6 flex gap-2">
-            <input id="ctaEmail" type="email" required placeholder="Seu e-mail para novidades" class="w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
-            <button class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Avisar-me</button>
-          </form>
-          <p class="mt-3 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <i data-lucide="shield" class="h-4 w-4"></i> Seus dados serão usados apenas para contato do piloto.
-          </p>
         </div>
         <div class="reveal">
           <div class="overflow-hidden rounded-2xl border bg-white shadow-soft">
@@ -135,49 +130,24 @@
       </div>
     </section>
 
-    <!-- História e Objetivos -->
-    <section id="historia" class="bg-gradient-to-b from-white to-brand-50/40 py-16">
-      <div class="container grid gap-10 md:grid-cols-2">
-        <div class="reveal">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">História & objetivos</h2>
-          <p class="mt-3 text-slate-700 dark:text-slate-300">Nascemos da colaboração entre educadores, ciclistas, recicladores e pesquisadores de Foz do Iguaçu para criar uma economia cidadã do bem comum. Nosso objetivo é acelerar hábitos sustentáveis com incentivo econômico, dados abertos e inclusão digital e analógica (QR em papel).</p>
-          <ul class="mt-4 list-disc pl-5 text-sm text-slate-700 dark:text-slate-300 space-y-1">
-            <li>Promover reciclagem, compostagem e mobilidade ativa.</li>
-            <li>Reforçar laços comunitários com validadores locais.</li>
-            <li>Mensurar CO₂ evitado/retirado e evidenciar impacto.</li>
-            <li>Escalar para bairros e escolas com módulos replicáveis.</li>
-          </ul>
-        </div>
-        <div class="reveal rounded-2xl border bg-white p-6 dark:bg-slate-900">
-          <h3 class="text-lg font-semibold">Objetivos 2025 (Foz do Iguaçu)</h3>
-          <div class="mt-4 grid grid-cols-2 gap-4 text-center">
-            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">1.000+</div><div class="text-xs text-slate-600 dark:text-slate-300">Cidadãos engajados</div></div>
-            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">20+</div><div class="text-xs text-slate-600 dark:text-slate-300">Comércios parceiros</div></div>
-            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">5t</div><div class="text-xs text-slate-600 dark:text-slate-300">Resíduos desviados</div></div>
-            <div class="rounded-xl border p-4"><div class="text-2xl font-bold">1t</div><div class="text-xs text-slate-600 dark:text-slate-300">CO₂ estimado</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Apps -->
-    <section id="apps" class="py-16">
+    <!-- História & Objetivos -->
+    <section id="historia" class="bg-gradient-to-b from-white to-brand-50/60 py-16 md:py-24">
       <div class="container">
-        <div class="text-center mb-8">
-          <span class="inline-flex rounded-full bg-brand px-3 py-1 text-xs font-medium text-white">Aplicativo</span>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Baixe o app</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Disponível para iOS e Android (beta). Use o QR para validar ações e acompanhar seus tokens.</p>
+        <div class="mb-10 text-center">
+          <span class="inline-flex rounded-full bg-brand px-3 py-1 text-xs font-medium text-white">História e objetivos</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">De bosque urbano a plataforma cívica</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Nasce no Bosque Guarani (Foz do Iguaçu) para incentivar hábitos sustentáveis e medir impacto real na cidade.</p>
         </div>
-        <div class="flex items-center justify-center gap-4 flex-wrap">
-          <a href="#" class="store-badge"><i data-lucide="apple" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">Download on the</div><div class="text-sm font-semibold">App Store</div></div></a>
-          <a href="#" class="store-badge"><i data-lucide="smartphone" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">GET IT ON</div><div class="text-sm font-semibold">Google Play</div></div></a>
-          <a href="#" class="store-badge"><i data-lucide="qr-code" class="w-5 h-5"></i><div class="leading-tight text-left"><div class="text-[10px]">Acesse via</div><div class="text-sm font-semibold">PWA (web)</div></div></a>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="rounded-2xl border bg-white p-5 dark:bg-slate-900"><h3 class="font-semibold">1. Diagnóstico</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Desafios locais: resíduos, mobilidade ativa e áreas verdes subutilizadas.</p></article>
+          <article class="rounded-2xl border bg-white p-5 dark:bg-slate-900"><h3 class="font-semibold">2. Incentivo</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">EcoTokens para quem recicla, composte, caminha/pedala, participa de oficinas e adota árvores.</p></article>
+          <article class="rounded-2xl border bg-white p-5 dark:bg-slate-900"><h3 class="font-semibold">3. Medição</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Indicadores de adoção, resíduos desviados do aterro, composto aplicado e CO₂ estimado.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- Como funciona -->
-    <section id="como" class="bg-gradient-to-b from-white to-brand-50/60 py-16">
+    <!-- Como funciona (bento) -->
+    <section id="como" class="py-16">
       <div class="container">
         <div class="mb-10 text-center">
           <span class="inline-flex rounded-full bg-brand px-3 py-1 text-xs font-medium text-white">Como funciona</span>
@@ -185,23 +155,44 @@
           <p class="mt-2 text-slate-600 dark:text-slate-300">Quatro etapas simples para participar e gerar benefícios para a cidade e a natureza.</p>
         </div>
         <div class="grid-bento reveal">
-          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3">
-            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="qr-code" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Cadastre-se & escaneie</h3></div>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Crie sua conta, receba seu QR (também em papel) e valide ações verdes.</p>
-          </article>
-          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3">
-            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="recycle" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Entregue & valide</h3></div>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Leve recicláveis e compostagem, participe de oficinas ou use mobilidade ativa.</p>
-          </article>
-          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-2">
-            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="coins" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Ganhe EcoTokens</h3></div>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Validadores comunitários registram sua ação e você recebe tokens na carteira.</p>
-          </article>
-          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-4">
-            <div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="leaf" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Troque & reinvista</h3></div>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Use tokens em comércios parceiros ou apoie reflorestação e compostagem comunitária.</p>
-          </article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3"><div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="qr-code" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Cadastre-se & escaneie</h3></div><p class="text-sm text-slate-600 dark:text-slate-300">Crie sua conta, receba seu QR (inclusive em papel) e valide ações verdes nos pontos parceiros.</p></article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-3"><div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="recycle" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Entregue & valide</h3></div><p class="text-sm text-slate-600 dark:text-slate-300">Leve recicláveis/composto, participe de oficinas ou use mobilidade ativa.</p></article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-2"><div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="coins" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Ganhe EcoTokens</h3></div><p class="text-sm text-slate-600 dark:text-slate-300">Validadores comunitários registram sua ação e você recebe tokens na carteira.</p></article>
+          <article class="col-span-6 rounded-3xl border bg-white p-6 dark:bg-slate-900 md:col-span-4"><div class="flex items-center gap-3 pb-2"><span class="rounded-xl bg-brand-100 p-2 text-brand-700"><i data-lucide="leaf" class="h-6 w-6"></i></span><h3 class="text-lg font-semibold">Troque & reinvista</h3></div><p class="text-sm text-slate-600 dark:text-slate-300">Use tokens em comércios parceiros ou apoie reflorestação e compostagem comunitária.</p></article>
         </div>
+      </div>
+    </section>
+
+    <!-- Aplicativos -->
+    <section id="apps" class="bg-brand-50/60 py-16">
+      <div class="container grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Leve o GreenGuaraní no bolso</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Baixe o app para iPhone ou Android. Faça login, valide ações, acompanhe seu saldo e troque benefícios.</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a class="store" href="#" aria-label="Baixar no App Store"><i data-lucide="apple" class="h-5 w-5"></i><span>App Store</span></a>
+            <a class="store" href="#" aria-label="Baixar no Google Play"><i data-lucide="smartphone" class="h-5 w-5"></i><span>Google Play</span></a>
+          </div>
+          <p class="mt-2 text-xs text-slate-500">Links reais serão adicionados quando os apps forem publicados.</p>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900">
+          <canvas id="kpiChartApps" class="h-64"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa interativo -->
+    <section id="mapa" class="py-16 md:py-24">
+      <div class="container">
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Pontos próximos de você</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Centros de reciclagem, compostagem, oficinas e validação em Foz do Iguaçu.</p>
+          </div>
+          <button id="nearbyBtn" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700">Encontrar perto de mim</button>
+        </div>
+        <div id="map" class="h-[440px] w-full rounded-2xl border"></div>
+        <p class="mt-3 text-xs text-slate-500">Permita o acesso à localização para ver os pontos mais próximos. Caso contrário, o mapa centraliza no Bosque Guarani.</p>
       </div>
     </section>
 
@@ -209,8 +200,8 @@
     <section id="impacto" class="bg-brand-50/60 py-16 md:py-24">
       <div class="container grid items-center gap-10 md:grid-cols-2">
         <div class="reveal">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Impacto em Foz do Iguaçu</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Acompanhe métricas de adoção, ações tokenizadas, integridade de dados e impacto ambiental.</p>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Impacto mensurável</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Indicadores locais em Foz do Iguaçu: adoção, ações tokenizadas, integridade de dados e impacto ambiental.</p>
           <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-200">
             <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> Usuários ativos e bairros participantes</li>
             <li class="flex items-start gap-2"><i data-lucide="check-circle" class="mt-0.5 h-5 w-5 text-brand"></i> Ações verificadas e tokens emitidos/trocados</li>
@@ -229,86 +220,16 @@
       </div>
     </section>
 
-    <!-- Mapa interativo -->
-    <section id="mapa" class="py-16">
-      <div class="container">
-        <div class="mb-6 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Pontos próximos</h2>
-            <p class="mt-1 text-slate-600 dark:text-slate-300">Veja no mapa os pontos de validação mais perto de você (demonstração).</p>
-          </div>
-          <div class="flex gap-2">
-            <button id="btnGeo" class="rounded-xl border px-3 py-2 text-sm hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="map-pin" class="mr-1 inline h-4 w-4"></i> Usar minha localização</button>
-            <button id="btnReset" class="rounded-xl border px-3 py-2 text-sm hover:bg-brand-50 dark:hover:bg-slate-800">Reiniciar</button>
-          </div>
-        </div>
-        <div id="map" class="h-[420px] w-full rounded-2xl border"></div>
-        <div class="mt-4 text-sm text-slate-600 dark:text-slate-300" id="listaPontos"></div>
-      </div>
-    </section>
-
-    <!-- Minha Conta -->
-    <section id="conta" class="bg-brand-50/60 py-16">
-      <div class="container grid gap-8 md:grid-cols-3">
-        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900 md:col-span-1">
-          <h3 class="text-lg font-semibold">Meu perfil</h3>
-          <form id="formPerfil" class="mt-4 space-y-3">
-            <div>
-              <label class="text-sm" for="pNome">Nome</label>
-              <input id="pNome" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Seu nome" required />
-            </div>
-            <div>
-              <label class="text-sm" for="pEmail">Email</label>
-              <input id="pEmail" type="email" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="voce@email.com" required />
-            </div>
-            <button class="w-full rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white">Salvar perfil</button>
-          </form>
-          <div id="perfilOk" class="hidden">
-            <div class="mt-3 rounded-xl border p-3 text-sm"><i data-lucide="user" class="mr-1 inline h-4 w-4"></i> <span id="perfilNome"></span><br/><i data-lucide="mail" class="mr-1 inline h-4 w-4"></i> <span id="perfilEmail"></span></div>
-            <button id="btnSair" class="mt-3 w-full rounded-xl border px-4 py-2 text-sm">Sair</button>
-          </div>
-        </div>
-
-        <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900 md:col-span-2">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold">Saldo & extrato de EcoTokens</h3>
-            <div class="text-sm">Saldo: <span id="saldo" class="font-semibold">0</span> ETK</div>
-          </div>
-          <div class="mt-4 grid gap-3 md:grid-cols-3">
-            <input id="tDesc" class="rounded-xl border px-3 py-2" placeholder="Descrição da ação" />
-            <input id="tValor" type="number" class="rounded-xl border px-3 py-2" placeholder="Tokens (+/-)" />
-            <button id="tAdd" class="rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white">Registrar</button>
-          </div>
-          <div class="mt-4 overflow-auto rounded-xl border">
-            <table class="min-w-full text-sm">
-              <thead class="bg-brand-100 text-brand-700"><tr><th class="p-2 text-left">Data</th><th class="p-2 text-left">Descrição</th><th class="p-2 text-right">Δ Tokens</th><th class="p-2 text-right">Saldo</th></tr></thead>
-              <tbody id="extrato"></tbody>
-            </table>
-          </div>
-          <div class="mt-3 flex gap-2">
-            <button id="btnCSV" class="rounded-xl border px-3 py-2 text-sm">Exportar CSV</button>
-            <button id="btnLimpar" class="rounded-xl border px-3 py-2 text-sm">Limpar extrato</button>
-          </div>
-          <p class="mt-2 text-xs text-slate-500">* Esta é uma simulação local (localStorage). Na versão oficial, o saldo e extrato vêm da sua carteira na nuvem.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- Contato e redes -->
-    <section id="contato" class="py-16">
+    <section id="contato" class="py-16 md:py-24">
       <div class="container grid items-start gap-10 md:grid-cols-2">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Fale conosco</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Dúvidas, parcerias e imprensa.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-200">
-            <li><i data-lucide="map-pin" class="mr-2 inline h-4 w-4"></i> Foz do Iguaçu, PR — Brasil</li>
-            <li><i data-lucide="mail" class="mr-2 inline h-4 w-4"></i> contato@greenguarani.org (exemplo)</li>
-          </ul>
-          <div class="mt-4 flex gap-3">
-            <a href="#" aria-label="Instagram" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="instagram" class="h-5 w-5"></i></a>
-            <a href="#" aria-label="Facebook" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="facebook" class="h-5 w-5"></i></a>
-            <a href="#" aria-label="YouTube" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="youtube" class="h-5 w-5"></i></a>
-            <a href="#" aria-label="LinkedIn" class="rounded-full border p-2 hover:bg-brand-50 dark:hover:bg-slate-800"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Fale com a gente</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Parcerias, imprensa, escolas e cidadãos de Foz do Iguaçu.</p>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a class="store" href="#"><i data-lucide="instagram" class="h-5 w-5"></i>Instagram</a>
+            <a class="store" href="#"><i data-lucide="facebook" class="h-5 w-5"></i>Facebook</a>
+            <a class="store" href="#"><i data-lucide="globe" class="h-5 w-5"></i>Site oficial</a>
           </div>
         </div>
         <div class="rounded-2xl border bg-white p-6 dark:bg-slate-900">
@@ -323,7 +244,7 @@
             </div>
             <div>
               <label class="text-sm font-medium" for="fMsg">Mensagem</label>
-              <textarea rows="4" id="fMsg" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Conte como podemos ajudar"></textarea>
+              <textarea rows="4" id="fMsg" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Conte como gostaria de participar"></textarea>
             </div>
             <button class="w-full rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-700"><i data-lucide="mail" class="mr-2 inline h-4 w-4"></i>Enviar</button>
             <p class="text-xs text-slate-500 dark:text-slate-400">Responderemos em breve.</p>
@@ -331,7 +252,7 @@
           <div id="thanks" class="hidden py-10 text-center">
             <i data-lucide="check-circle" class="mx-auto h-10 w-10 text-brand"></i>
             <h3 class="mt-3 text-xl font-semibold">Obrigado! Interesse registrado.</h3>
-            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Em breve entraremos em contato.</p>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Em breve entraremos em contato para incluir você no piloto.</p>
             <button onclick="resetForm()" class="mt-6 rounded-2xl border px-4 py-2">Enviar outra mensagem</button>
           </div>
         </div>
@@ -339,39 +260,183 @@
     </section>
   </main>
 
+  <!-- ====== ACCOUNT VIEW ====== -->
+  <section id="accountView" class="hidden py-10">
+    <div class="container space-y-6">
+      <!-- Top bar within account -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <button id="backToSite" class="rounded-xl border px-3 py-1.5 text-sm hover:bg-brand-50 dark:hover:bg-slate-800" aria-label="Voltar">← Voltar</button>
+          <h1 class="text-2xl font-bold tracking-tight">Minha conta</h1>
+        </div>
+        <nav class="flex flex-wrap items-center gap-2 text-sm">
+          <a href="#" class="store">🏠 Principal</a>
+          <a href="#mapa" class="store">🗺️ Mapa</a>
+          <a href="#apps" class="store">📱 Apps</a>
+          <a href="#impacto" class="store">📈 Impacto</a>
+        </nav>
+      </div>
+
+      <!-- Summary / header card -->
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border bg-white p-5 dark:bg-slate-900 md:col-span-2">
+          <div class="flex items-center gap-4">
+            <img id="avatar" src="https://api.dicebear.com/8.x/identicon/svg?seed=gg" alt="Avatar" class="h-14 w-14 rounded-full border" />
+            <div>
+              <div class="text-lg font-semibold" id="accNome">Usuário Green</div>
+              <div class="text-sm text-slate-500" id="accEmail">usuario@exemplo.com</div>
+              <div class="text-xs text-slate-500">Cidade: Foz do Iguaçu • Bairro: Centro</div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border bg-white p-5 text-center dark:bg-slate-900">
+          <div class="text-xs uppercase tracking-wide text-slate-500">Saldo EcoTokens</div>
+          <div class="mt-1 text-3xl font-bold" id="accSaldo">0</div>
+          <div class="mt-3 flex justify-center gap-2">
+            <button id="simularCredito" class="rounded-xl border px-3 py-1.5 text-sm hover:bg-brand-50 dark:hover:bg-slate-800">Simular crédito</button>
+            <button id="simularDebito" class="rounded-xl border px-3 py-1.5 text-sm hover:bg-brand-50 dark:hover:bg-slate-800">Simular gasto</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="rounded-2xl border bg-white p-4 dark:bg-slate-900">
+        <div class="mb-4 flex flex-wrap gap-2">
+          <button class="tab-btn rounded-lg bg-brand px-3 py-1.5 text-sm text-white" data-actab="perfil">Perfil</button>
+          <button class="tab-btn rounded-lg px-3 py-1.5 text-sm" data-actab="carteira">Carteira</button>
+          <button class="tab-btn rounded-lg px-3 py-1.5 text-sm" data-actab="extrato">Extrato</button>
+          <button class="tab-btn rounded-lg px-3 py-1.5 text-sm" data-actab="seguranca">Segurança</button>
+        </div>
+        <!-- Perfil -->
+        <div id="tab-perfil">
+          <form id="perfilForm" class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="text-sm font-medium" for="pNome">Nome</label>
+              <input id="pNome" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="pEmail">Email</label>
+              <input id="pEmail" type="email" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="voce@email.com" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="pCidade">Cidade</label>
+              <input id="pCidade" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" value="Foz do Iguaçu" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="pBairro">Bairro</label>
+              <input id="pBairro" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" placeholder="Seu bairro" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="pIdioma">Idioma</label>
+              <select id="pIdioma" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60"><option value="pt">Português</option><option value="es">Español</option></select>
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="pNotif">Notificações</label>
+              <div class="mt-1 flex items-center gap-3"><input id="pNotif" type="checkbox" class="h-4 w-4" /><span class="text-sm">Receber emails e novidades</span></div>
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-sm font-medium" for="pAvatar">Foto de perfil</label>
+              <input id="pAvatar" type="file" accept="image/*" class="mt-1 w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
+            </div>
+            <div class="md:col-span-2 flex justify-end">
+              <button class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white">Salvar</button>
+            </div>
+          </form>
+        </div>
+        <!-- Carteira -->
+        <div id="tab-carteira" class="hidden">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border bg-white p-5 dark:bg-slate-900">
+              <div class="text-sm text-slate-500">Endereço</div>
+              <div class="mt-1 font-mono" id="accAddr">GG-FOZ-0000-XXXX</div>
+              <div class="mt-3 flex gap-2">
+                <button id="copyAddr" class="rounded-xl border px-3 py-1.5 text-sm">Copiar</button>
+                <button id="genNewAddr" class="rounded-xl border px-3 py-1.5 text-sm">Gerar novo</button>
+              </div>
+              <div class="mt-6">
+                <label class="text-sm font-medium">Transferir tokens</label>
+                <div class="mt-2 flex gap-2">
+                  <input id="xTo" placeholder="Destino (GG-...)" class="w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
+                  <input id="xAmt" type="number" min="1" step="1" placeholder="Qtd" class="w-24 rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
+                  <button id="xSend" class="rounded-2xl bg-brand px-4 py-2 text-sm font-medium text-white">Enviar</button>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Simulado localmente. Sem blockchain real neste demo.</p>
+              </div>
+            </div>
+            <div class="rounded-2xl border bg-white p-5 dark:bg-slate-900">
+              <div class="text-sm text-slate-500">Resgatar voucher</div>
+              <div class="mt-2 flex gap-2">
+                <input id="voucher" placeholder="Código do voucher" class="w-full rounded-xl border bg-white/80 px-3 py-2 dark:bg-slate-800/60" />
+                <button id="redeem" class="rounded-2xl border px-4 py-2 text-sm">Resgatar</button>
+              </div>
+              <div class="mt-6 text-sm text-slate-600 dark:text-slate-300">Dica: parceiros podem gerar cupons que convertem tokens em descontos/produtos.</div>
+            </div>
+          </div>
+        </div>
+        <!-- Extrato -->
+        <div id="tab-extrato" class="hidden">
+          <div class="mb-3 flex items-center justify-between">
+            <div class="text-sm text-slate-500">Últimas movimentações</div>
+            <div class="flex gap-2">
+              <select id="filtroMes" class="rounded-xl border px-2 py-1.5 text-sm"><option value="">Todos</option></select>
+              <button id="baixarCSV" class="rounded-xl border px-3 py-1.5 text-sm">Baixar CSV</button>
+            </div>
+          </div>
+          <div class="overflow-auto rounded-2xl border">
+            <table class="min-w-full text-sm">
+              <thead class="bg-slate-50 dark:bg-slate-800">
+                <tr><th class="px-4 py-2 text-left">Data</th><th class="px-4 py-2 text-left">Descrição</th><th class="px-4 py-2 text-left">Tipo</th><th class="px-4 py-2 text-right">Tokens</th></tr>
+              </thead>
+              <tbody id="tbodyExtrato" class="divide-y divide-slate-100 dark:divide-slate-800"></tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Segurança -->
+        <div id="tab-seguranca" class="hidden">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border bg-white p-5 dark:bg-slate-900">
+              <h3 class="font-semibold">Autenticação em duas etapas</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Ative para maior proteção da sua conta.</p>
+              <button id="btn2FA" class="mt-3 rounded-2xl border px-4 py-2 text-sm">Ativar 2FA (demo)</button>
+            </div>
+            <div class="rounded-2xl border bg-white p-5 dark:bg-slate-900">
+              <h3 class="font-semibold">Sessões</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Encerrar sessões em outros dispositivos.</p>
+              <button id="btnLogoutAll" class="mt-3 rounded-2xl border px-4 py-2 text-sm">Encerrar todas (demo)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="border-t py-10">
     <div class="container flex flex-col items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-300 md:flex-row">
       <div class="flex items-center gap-2">
-        <img src="logo.jpeg" alt="GreenGuaraní" class="h-8 w-8 rounded-lg object-contain bg-white" onerror="this.style.display='none'"/>
-        <div class="grid h-8 w-8 place-items-center rounded-lg bg-brand font-bold text-white" aria-hidden="true">GG</div>
+        <img src="logo.jpeg" alt="GreenGuaraní" class="h-8 w-8 rounded-full object-cover" />
         <span class="font-semibold tracking-tight">GreenGuaraní</span>
       </div>
       <div class="flex items-center gap-3">
         <span>© <span id="year"></span> GreenGuaraní</span>
         <span class="hidden md:inline">•</span>
-        <a href="#politicas" class="hover:text-brand-700">Políticas</a>
-        <a href="#privacidade" class="hover:text-brand-700">Privacidade</a>
+        <a href="#politicas" class="hover:text-brand-700">Política de Privacidade</a>
+        <a href="#politicas" class="hover:text-brand-700">Termos de Uso</a>
       </div>
       <div class="flex items-center gap-3">
-        <a class="hover:text-brand-700" href="https://drive.google.com/file/d/1CRVDndlYo0FMAUg3n5BtxoQ96njCBDxm/preview" target="_blank" rel="noreferrer">Vídeo demo</a>
+        <a class="hover:text-brand-700" href="#apps">Apps</a>
         <span class="hidden md:inline">•</span>
-        <a class="hover:text-brand-700" href="#">Imprensa</a>
+        <a class="hover:text-brand-700" href="#mapa">Mapa</a>
       </div>
     </div>
   </footer>
 
-  <!-- Políticas & Privacidade (seções simples) -->
-  <section id="politicas" class="py-12 border-t bg-white dark:bg-slate-900">
-    <div class="container prose prose-sm max-w-none dark:prose-invert">
-      <h3>Políticas</h3>
-      <p>Nosso piloto segue princípios de dados mínimos, auditoria comunitária e transparência. Tokens são instrumentais e não financeiros; não representam títulos ou valores mobiliários.</p>
-    </div>
-  </section>
-  <section id="privacidade" class="py-12 border-t bg-white dark:bg-slate-900">
-    <div class="container prose prose-sm max-w-none dark:prose-invert">
-      <h3>Privacidade</h3>
-      <p>Coletamos apenas dados necessários ao funcionamento do sistema (nome, email e registros de ações). Você pode solicitar exclusão a qualquer momento. Consulte a política completa na versão final do app e painéis.</p>
+  <!-- Políticas (seção simples) -->
+  <section id="politicas" class="bg-slate-50 py-10 dark:bg-slate-900">
+    <div class="container text-sm text-slate-600 dark:text-slate-300">
+      <h3 class="text-lg font-semibold">Política de Privacidade & Termos</h3>
+      <p class="mt-2">Coletamos apenas dados necessários para operação do piloto (nome, email, cidade/bairro e métricas de uso). Seus dados não serão vendidos. Para solicitar remoção ou exportação, entre em contato pelo formulário acima.</p>
+      <p class="mt-2">Ao utilizar o site e os aplicativos, você concorda com nossos termos, incluindo regras de conduta, elegibilidade e limites de responsabilidade. Versões completas serão publicadas quando os apps forem lançados.</p>
     </div>
   </section>
 
@@ -387,7 +452,7 @@
   </script>
 
   <script>
-    // ----- Dados mock (substitua por sua API) -----
+    // ---- Dados mock (substitua por sua API) ----
     const kpiData = [
       { mes: "Jan", acoes: 40, tokens: 120, co2: 15 },
       { mes: "Fev", acoes: 85, tokens: 310, co2: 42 },
@@ -397,14 +462,33 @@
       { mes: "Jun", acoes: 260, tokens: 1200, co2: 220 },
     ];
 
+    // DB local simulado para Minha Conta
+    const defaultUser = {
+      nome: 'Usuário Green', email: 'usuario@exemplo.com', cidade: 'Foz do Iguaçu', bairro: 'Centro', idioma: 'pt', notif: true,
+      saldo: 350, addr: 'GG-FOZ-0011-ABCD', extrato: [
+        { ts: Date.now()-86400000*6, desc: 'Reciclagem — 3 kg', tipo: 'Crédito', amt: 30 },
+        { ts: Date.now()-86400000*4, desc: 'Compostagem — 2 kg', tipo: 'Crédito', amt: 20 },
+        { ts: Date.now()-86400000*3, desc: 'Café parceiro', tipo: 'Débito', amt: -10 },
+        { ts: Date.now()-86400000*2, desc: 'Oficina comunitária', tipo: 'Crédito', amt: 15 },
+      ]
+    };
+    let user = JSON.parse(localStorage.getItem('gg_user') || 'null') || defaultUser;
+    const saveUser = () => localStorage.setItem('gg_user', JSON.stringify(user));
+
     const fmt = n => new Intl.NumberFormat().format(n);
 
-    // Totais com animação
+    // Totais públicos
     const totais = kpiData.reduce((acc, r) => ({ acoes: acc.acoes + r.acoes, tokens: acc.tokens + r.tokens, co2: acc.co2 + r.co2 }), { acoes:0, tokens:0, co2:0 });
+
+    // Contadores hero
     const animateCount = (el, to, suffix = '') => { const start = 0; const dur = 800; const t0 = performance.now(); const step = now => { const p = Math.min(1, (now - t0)/dur); el.textContent = fmt(Math.floor(start + (to-start)*p)) + suffix; if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+    document.getElementById('stat-acoes').textContent = '—';
+    document.getElementById('stat-tokens').textContent = '—';
+    document.getElementById('stat-co2').textContent = '—';
     animateCount(document.getElementById('stat-acoes'), totais.acoes);
     animateCount(document.getElementById('stat-tokens'), totais.tokens);
     animateCount(document.getElementById('stat-co2'), totais.co2, ' kg');
+
     document.getElementById('stat-acoes-2').textContent = fmt(totais.acoes);
     document.getElementById('stat-tokens-2').textContent = fmt(totais.tokens);
     document.getElementById('stat-co2-2').textContent = fmt(totais.co2);
@@ -412,104 +496,109 @@
     // Ano no footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Gráfico Chart.js
-    new Chart(document.getElementById('kpiChart'), {
-      type: 'line',
-      data: { labels: kpiData.map(r => r.mes), datasets: [{ label: 'EcoTokens', data: kpiData.map(r => r.tokens), borderColor: '#059669', backgroundColor: 'rgba(5,150,105,.2)', fill: true, tension: .35 }] },
-      options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(0,0,0,.06)' } } } }
+    // Gráficos
+    const chartLine = (canvas, data) => new Chart(canvas, { type: 'line', data: { labels: data.map(r=>r.mes), datasets: [{ label:'EcoTokens', data: data.map(r=>r.tokens), borderColor:'#059669', backgroundColor:'rgba(5,150,105,.2)', fill:true, tension:.35 }] }, options: { plugins:{legend:{display:false}}, scales:{ x:{ grid:{display:false} }, y:{ grid:{ color:'rgba(0,0,0,.06)'} } } } });
+    chartLine(document.getElementById('kpiChart'), kpiData);
+    chartLine(document.getElementById('kpiChartApps'), kpiData);
+
+    // Mapa Leaflet
+    const foz = [-25.5163, -54.5854];
+    const map = L.map('map').setView(foz, 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+    const pontos = [
+      { nome:'Bosque Guarani (Validação)', lat:-25.5427, lng:-54.5827 },
+      { nome:'Cooperativa Reciclagem Centro', lat:-25.5140, lng:-54.5885 },
+      { nome:'Ponto de Compostagem JK', lat:-25.5059, lng:-54.6008 },
+      { nome:'Oficina Escola UNILA', lat:-25.4518, lng:-54.5380 }
+    ];
+    pontos.forEach(p=> L.marker([p.lat,p.lng]).addTo(map).bindPopup(p.nome));
+    document.getElementById('nearbyBtn').addEventListener('click', ()=>{
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(pos=>{
+          const {latitude, longitude} = pos.coords; map.setView([latitude, longitude], 14);
+          const u = L.circle([latitude, longitude], { radius: 1200, color:'#059669' }).addTo(map);
+        }, ()=> map.setView(foz, 13));
+      } else { map.setView(foz, 13) }
     });
 
-    // Tabs EcoToken
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(btn => btn.addEventListener('click', () => {
-      tabs.forEach(x => x.classList.remove('bg-brand','text-white'));
-      btn.classList.add('bg-brand','text-white');
-      document.getElementById('tab-cid')?.classList.toggle('hidden', btn.dataset.tab !== 'cid');
-      document.getElementById('tab-com')?.classList.toggle('hidden', btn.dataset.tab !== 'com');
-      document.getElementById('tab-gov')?.classList.toggle('hidden', btn.dataset.tab !== 'gov');
-    }));
-
-    // Form contato — simulado
-    document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); contactForm.classList.add('hidden'); thanks.classList.remove('hidden'); });
+    // Form de contato — simulado
+    const FORMSPREE_URL = '';
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = { nome: fNome.value, email: fEmail.value, mensagem: fMsg.value };
+      if (FORMSPREE_URL) {
+        try { await fetch(FORMSPREE_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }); } catch {}
+      }
+      contactForm.classList.add('hidden');
+      thanks.classList.remove('hidden');
+    });
     function resetForm(){ contactForm.reset(); thanks.classList.add('hidden'); contactForm.classList.remove('hidden'); }
 
-    // Tema
+    // Tema (dark / light)
     const themeBtn = document.getElementById('themeBtn');
     const setTheme = t => { document.documentElement.classList.toggle('dark', t==='dark'); localStorage.setItem('theme', t); themeBtn.textContent = t==='dark' ? '☀️' : '🌙'; };
     setTheme(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
     themeBtn.addEventListener('click', () => setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark'));
 
     // Revelar on-scroll
-    const io = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.15 });
+    const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // ----- Mapa (Leaflet) -----
-    const pontosDemo = [
-      { nome: 'Bosque Guarani (Zoológico)', lat: -25.5424, lng: -54.5859, tipo: 'Validação' },
-      { nome: 'Parque Monjolo', lat: -25.5148, lng: -54.5744, tipo: 'Coleta/Composto' },
-      { nome: 'SMTT — Estação Bike', lat: -25.5429, lng: -54.5888, tipo: 'Mobilidade' },
-      { nome: 'Vila A — Gramadão', lat: -25.4288, lng: -54.5990, tipo: 'Eventos/Feira' }
-    ];
+    // ====== Router simples (hash) para Minha Conta ======
+    const mainView = document.getElementById('mainView');
+    const accountView = document.getElementById('accountView');
+    function route(){ if(location.hash === '#conta'){ mainView.classList.add('hidden'); accountView.classList.remove('hidden'); renderAccount(); } else { accountView.classList.add('hidden'); mainView.classList.remove('hidden'); } }
+    window.addEventListener('hashchange', route); route();
+    document.getElementById('backToSite').addEventListener('click', ()=>{ location.hash = ''; });
 
-    const map = L.map('map').setView([-25.5424, -54.5859], 13); // centro em Foz
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
-    const markers = [];
-    pontosDemo.forEach(p => { const m = L.marker([p.lat, p.lng]).addTo(map).bindPopup(`<b>${p.nome}</b><br/>${p.tipo}`); markers.push({ ...p, marker: m }); });
-
-    function listarProximos(pos){
-      const d = (a,b) => Math.hypot(a.lat-b.lat, a.lng-b.lng);
-      const lista = [...markers].map(m => ({...m, dist: d({lat:pos.lat,lng:pos.lng}, {lat:m.lat,lng:m.lng})})).sort((a,b)=>a.dist-b.dist).slice(0,4);
-      const html = lista.map(x => `• <b>${x.nome}</b> — ${x.tipo}`).join('<br/>');
-      document.getElementById('listaPontos').innerHTML = `<p><b>Pontos próximos:</b><br/>${html}</p>`;
+    // ====== Lógica da Conta ======
+    function renderAccount(){
+      accNome.textContent = user.nome; accEmail.textContent = user.email; accSaldo.textContent = fmt(user.saldo); accAddr.textContent = user.addr;
+      pNome.value = user.nome; pEmail.value = user.email; pCidade.value = user.cidade; pBairro.value = user.bairro; pIdioma.value = user.idioma; pNotif.checked = !!user.notif;
+      // meses no filtro
+      const meses = Array.from(new Set(user.extrato.map(e=> new Date(e.ts).toLocaleString('pt-BR', { month:'2-digit', year:'numeric'}))));
+      filtroMes.innerHTML = '<option value="">Todos</option>' + meses.map(m=>`<option>${m}</option>`).join('');
+      drawExtrato();
     }
-    listarProximos({lat:-25.5424,lng:-54.5859});
 
-    document.getElementById('btnGeo').addEventListener('click', () => {
-      if (!navigator.geolocation) return alert('Geolocalização não suportada.');
-      navigator.geolocation.getCurrentPosition((loc) => {
-        const { latitude: lat, longitude: lng } = loc.coords;
-        const me = L.circleMarker([lat, lng], { radius: 8, color: '#10b981' }).addTo(map).bindPopup('Você está aqui');
-        map.setView([lat, lng], 14);
-        listarProximos({lat,lng});
-      }, () => alert('Não foi possível obter sua localização.'));
+    function drawExtrato(){
+      const f = filtroMes.value;
+      const rows = user.extrato.filter(e=> !f || new Date(e.ts).toLocaleString('pt-BR', { month:'2-digit', year:'numeric'})===f)
+        .sort((a,b)=>b.ts-a.ts)
+        .map(e=> `<tr><td class="px-4 py-2">${new Date(e.ts).toLocaleString('pt-BR')}</td><td class="px-4 py-2">${e.desc}</td><td class="px-4 py-2">${e.tipo}</td><td class="px-4 py-2 text-right ${e.amt<0?'text-red-600':'text-emerald-700'}">${e.amt>0?'+':''}${e.amt}</td></tr>`).join('');
+      tbodyExtrato.innerHTML = rows || '<tr><td class="px-4 py-6 text-center text-slate-500" colspan="4">Sem movimentações</td></tr>';
+    }
+
+    // Tabs da conta
+    const actabs = document.querySelectorAll('[data-actab]');
+    actabs.forEach(btn => btn.addEventListener('click', ()=>{
+      actabs.forEach(x=>x.classList.remove('bg-brand','text-white'));
+      btn.classList.add('bg-brand','text-white');
+      ['perfil','carteira','extrato','seguranca'].forEach(id=> document.getElementById('tab-'+id).classList.add('hidden'));
+      document.getElementById('tab-'+btn.dataset.actab).classList.remove('hidden');
+    }));
+
+    // Salvar perfil
+    perfilForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      user.nome = pNome.value; user.email = pEmail.value; user.cidade = pCidade.value; user.bairro = pBairro.value; user.idioma = pIdioma.value; user.notif = pNotif.checked; saveUser(); renderAccount(); alert('Perfil atualizado! (demo)');
     });
-    document.getElementById('btnReset').addEventListener('click', ()=>{ map.setView([-25.5424,-54.5859],13); listarProximos({lat:-25.5424,lng:-54.5859}); });
+    pAvatar.addEventListener('change', (e)=>{ const f = e.target.files?.[0]; if(!f) return; const r = new FileReader(); r.onload = ()=> { avatar.src = r.result; }; r.readAsDataURL(f); });
 
-    // ----- Minha conta (simulado em localStorage) -----
-    const S_USER = 'gg_user', S_LEDGER = 'gg_ledger';
-    const $ = sel => document.querySelector(sel);
+    // Carteira
+    copyAddr.addEventListener('click', ()=>{ navigator.clipboard.writeText(user.addr); alert('Endereço copiado'); });
+    genNewAddr.addEventListener('click', ()=>{ user.addr = `GG-FOZ-${Math.floor(Math.random()*9000+1000)}-${Math.random().toString(36).slice(2,6).toUpperCase()}`; saveUser(); renderAccount(); });
+    xSend.addEventListener('click', (e)=>{ e.preventDefault(); const amt = parseInt(xAmt.value,10)||0; if(amt<=0||amt>user.saldo) return alert('Quantidade inválida'); user.saldo -= amt; user.extrato.push({ ts: Date.now(), desc:`Transferência para ${xTo.value||'GG-????'}`, tipo:'Débito', amt:-amt }); saveUser(); renderAccount(); xAmt.value=''; xTo.value=''; });
+    redeem.addEventListener('click', ()=>{ if(!voucher.value) return; const cred = 25; user.saldo += cred; user.extrato.push({ ts: Date.now(), desc:`Voucher ${voucher.value}`, tipo:'Crédito', amt: cred }); voucher.value=''; saveUser(); renderAccount(); });
+    simularCredito.addEventListener('click', ()=>{ user.saldo+=10; user.extrato.push({ ts: Date.now(), desc:'Simulação crédito', tipo:'Crédito', amt:10 }); saveUser(); renderAccount(); });
+    simularDebito.addEventListener('click', ()=>{ if(user.saldo<=0) return; user.saldo-=5; user.extrato.push({ ts: Date.now(), desc:'Simulação débito', tipo:'Débito', amt:-5 }); saveUser(); renderAccount(); });
 
-    function loadUser(){ try { return JSON.parse(localStorage.getItem(S_USER) || 'null'); } catch { return null; } }
-    function saveUser(u){ localStorage.setItem(S_USER, JSON.stringify(u)); }
-    function loadLedger(){ try { return JSON.parse(localStorage.getItem(S_LEDGER) || '[]'); } catch { return []; } }
-    function saveLedger(l){ localStorage.setItem(S_LEDGER, JSON.stringify(l)); }
-
-    function uiUser(){
-      const u = loadUser();
-      if(u){ $('#formPerfil').classList.add('hidden'); $('#perfilOk').classList.remove('hidden'); $('#perfilNome').textContent = u.nome; $('#perfilEmail').textContent = u.email; }
-      else { $('#perfilOk').classList.add('hidden'); $('#formPerfil').classList.remove('hidden'); }
-    }
-
-    function uiLedger(){
-      const l = loadLedger();
-      let saldo = 0; const rows = l.map(item => { saldo += item.valor; return `<tr class="border-t"><td class="p-2">${new Date(item.ts).toLocaleString()}</td><td class="p-2">${item.desc}</td><td class="p-2 text-right">${item.valor>0?'+':''}${item.valor}</td><td class="p-2 text-right">${saldo}</td></tr>`; }).join('');
-      $('#extrato').innerHTML = rows || '<tr><td colspan="4" class="p-3 text-center text-slate-500">Sem lançamentos</td></tr>';
-      $('#saldo').textContent = saldo;
-    }
-
-    $('#formPerfil').addEventListener('submit', (e)=>{ e.preventDefault(); saveUser({ nome: $('#pNome').value, email: $('#pEmail').value }); uiUser(); });
-    $('#btnSair').addEventListener('click', ()=>{ localStorage.removeItem(S_USER); uiUser(); });
-
-    $('#tAdd').addEventListener('click', ()=>{
-      const desc = $('#tDesc').value.trim(); const valor = parseInt($('#tValor').value,10);
-      if(!desc || isNaN(valor)) return alert('Preencha descrição e valor.');
-      const l = loadLedger(); l.push({ ts: Date.now(), desc, valor }); saveLedger(l); $('#tDesc').value=''; $('#tValor').value=''; uiLedger();
+    filtroMes.addEventListener('change', drawExtrato);
+    baixarCSV.addEventListener('click', ()=>{
+      const header = 'data,descricao,tipo,tokens\n';
+      const csv = header + user.extrato.map(e=> [new Date(e.ts).toISOString(), e.desc, e.tipo, e.amt].join(',')).join('\n');
+      const blob = new Blob([csv], {type:'text/csv'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='extrato.csv'; a.click(); URL.revokeObjectURL(url);
     });
-    $('#btnCSV').addEventListener('click', ()=>{ const l = loadLedger(); const header = 'data,descricao,valor'; const lines = l.map(i => `${new Date(i.ts).toISOString()},${i.desc.replace(/,/g,';')},${i.valor}`); const csv = [header,...lines].join('\n'); const blob = new Blob([csv], {type:'text/csv'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'extrato-ecotokens.csv'; a.click(); });
-    $('#btnLimpar').addEventListener('click', ()=>{ if(confirm('Apagar todos os lançamentos?')){ saveLedger([]); uiLedger(); }});
-
-    // init
-    uiUser(); uiLedger();
 
     // Ícones
     window.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
